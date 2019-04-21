@@ -65,8 +65,7 @@ public class FocusTraversalOnArray extends FocusTraversalPolicy {
 			index = newIndex;
 			//
 			Component component = m_Components[newIndex];
-			if (component.isEnabled() && component.isVisible()
-					&& component.isFocusable()) {
+			if (component.isEnabled() && component.isVisible() && component.isFocusable()) {
 				return component;
 			}
 		}

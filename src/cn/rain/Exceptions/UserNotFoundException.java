@@ -1,11 +1,12 @@
 package cn.rain.Exceptions;
 
-/** 
-* 找不到相应用户时抛出此异常
-* @author  rain 
-* @version 2014-09-10
-* @since   JDK1.6
-*/ 
+/**
+ * 找不到相应用户时抛出此异常
+ * 
+ * @author SwYoung
+ * @version V1.0
+ * @since 2019-4-29
+ */
 
 public class UserNotFoundException extends Exception {
 
@@ -30,8 +31,8 @@ public class UserNotFoundException extends Exception {
 		// TODO Auto-generated constructor stub
 	}
 
-	public UserNotFoundException(String message, Throwable cause,
-			boolean enableSuppression, boolean writableStackTrace) {
+	public UserNotFoundException(String message, Throwable cause, boolean enableSuppression,
+			boolean writableStackTrace) {
 		super();
 		// TODO Auto-generated constructor stub
 	}

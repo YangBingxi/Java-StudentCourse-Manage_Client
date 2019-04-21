@@ -21,9 +21,9 @@ import cn.rain.dao.impl.UsersDaoImpl;
 /**
  * 教师使用界面插入用户面板
  * 
- * @author rain
- * @version 2014-09-10
- * @since JDK1.6
+ * @author SwYoung
+ * @version V1.0
+ * @since 2019-4-29
  */
 
 public class Teac_InsertPanel extends JPanel implements ActionListener {
@@ -69,8 +69,7 @@ public class Teac_InsertPanel extends JPanel implements ActionListener {
 
 		insertButton = new JButton();
 		insertButton.setBounds(304, 172, 70, 38);
-		insertButton.setIcon(new javax.swing.ImageIcon(getClass().getResource(
-				"/images/insert_Button.png")));
+		insertButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/insert_Button.png")));
 		insertButton.addActionListener(this);
 		add(insertButton);
 
@@ -91,8 +90,7 @@ public class Teac_InsertPanel extends JPanel implements ActionListener {
 		}
 		add(termComboBox);
 
-		ImageIcon labIma = new javax.swing.ImageIcon(getClass().getResource(
-				"/images/teacher_panel.png"));
+		ImageIcon labIma = new javax.swing.ImageIcon(getClass().getResource("/images/teacher_panel.png"));
 		JLabel jlabel = new JLabel(labIma);
 		add(jlabel, new Integer(Integer.MIN_VALUE));
 		jlabel.setBounds(0, 0, labIma.getIconWidth(), labIma.getIconHeight());
@@ -124,27 +122,18 @@ public class Teac_InsertPanel extends JPanel implements ActionListener {
 					issucceed = dao.addScores(snoField.getText(), scores, term);
 				}
 				if (!issucceed) {
-					JOptionPane
-							.showMessageDialog(
-									null,
-									new JLabel(
-											"<html><h2><font color='red'>录入失败！</font></h2></html>"),
-									"警告", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							new JLabel("<html><h2><font color='red'>录入失败！</font></h2></html>"), "警告",
+							JOptionPane.ERROR_MESSAGE);
 				} else {
-					JOptionPane
-							.showMessageDialog(
-									null,
-									new JLabel(
-											"<html><h2><font color='green'>录入成功！</font></h2></html>"),
-									"提示", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							new JLabel("<html><h2><font color='green'>录入成功！</font></h2></html>"), "提示",
+							JOptionPane.INFORMATION_MESSAGE);
 				}
 			} catch (UserNotFoundException e1) {
-				JOptionPane
-						.showMessageDialog(
-								null,
-								new JLabel(
-										"<html><h2><font color='red'>此学号不存在！<br/>请重新输入！</font></h2></html>"),
-								"警告", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null,
+						new JLabel("<html><h2><font color='red'>此学号不存在！<br/>请重新输入！</font></h2></html>"), "警告",
+						JOptionPane.ERROR_MESSAGE);
 			}
 			snoField.setText("");
 			scoreField.setText("");

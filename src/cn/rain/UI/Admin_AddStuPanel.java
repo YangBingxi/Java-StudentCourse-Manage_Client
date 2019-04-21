@@ -30,9 +30,9 @@ import javax.swing.UnsupportedLookAndFeelException;
 /**
  * 管理员界面添加学生面板
  * 
- * @author rain
- * @version 2014-09-10
- * @since JDK1.6
+ * @author SwYoung
+ * @version V1.0
+ * @since 2019-4-29
  */
 
 public class Admin_AddStuPanel extends JPanel implements ActionListener {
@@ -55,8 +55,7 @@ public class Admin_AddStuPanel extends JPanel implements ActionListener {
 	public Admin_AddStuPanel() {
 
 		try {
-			UIManager
-					.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 		} catch (ClassNotFoundException e1) {
 			e1.printStackTrace();
 		} catch (InstantiationException e1) {
@@ -281,12 +280,9 @@ public class Admin_AddStuPanel extends JPanel implements ActionListener {
 			try {
 				birthday = df.parse(bir);
 			} catch (ParseException e1) {
-				JOptionPane
-						.showMessageDialog(
-								null,
-								new JLabel(
-										"<html><h2><font color='red'>输入日期有误！</font></h2></html>"),
-								"警告", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null,
+						new JLabel("<html><h2><font color='red'>输入日期有误！</font></h2></html>"), "警告",
+						JOptionPane.ERROR_MESSAGE);
 			}
 
 			UserDao dao = new UsersDaoImpl();
@@ -302,34 +298,26 @@ public class Admin_AddStuPanel extends JPanel implements ActionListener {
 			stu.put("permission", "学生");
 
 			try {
-				if (username.equals("") || password.equals("")
-						|| sno.equals("") || name.equals("")
+				if (username.equals("") || password.equals("") || sno.equals("") || name.equals("")
 						|| schoolClass.equals("")) {
-					JOptionPane
-					.showMessageDialog(
-							null,
-							new JLabel(
-									"<html><h2><font color='red'>请填写完整用户信息！</font></h2></html>"),
-							"警告", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							new JLabel("<html><h2><font color='red'>请填写完整用户信息！</font></h2></html>"), "警告",
+							JOptionPane.ERROR_MESSAGE);
 
-				}else{
+				} else {
 					dao.addUser(stu);
-					
-					JOptionPane.showMessageDialog(null, new JLabel(
-							"<html><h2><font color='green'>添加成功！</font></h2></html>"),
-							"提醒", JOptionPane.INFORMATION_MESSAGE);
+
+					JOptionPane.showMessageDialog(null,
+							new JLabel("<html><h2><font color='green'>添加成功！</font></h2></html>"), "提醒",
+							JOptionPane.INFORMATION_MESSAGE);
 					usernameField.setText("");
 					passwordField.setText("");
 					snoField.setText("");
 					nameField.setText("");
 				}
 			} catch (UserExistedException e1) {
-				JOptionPane
-						.showMessageDialog(
-								null,
-								new JLabel(
-										"<html><h2><font color='red'>用户已存在！</font></h2></html>"),
-								"警告", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'>用户已存在！</font></h2></html>"),
+						"警告", JOptionPane.ERROR_MESSAGE);
 			} catch (RemoteException e1) {
 				e1.printStackTrace();
 			}

@@ -4,18 +4,19 @@ import java.util.Date;
 import java.util.Map;
 
 public class Teacher implements User {
-	
-	/** 
-	* 教师用户实体
-	* @author  rain 
-	* @version 2014-09-10
-	* @since   JDK1.6
-	*/ 
-	
-	private String name;//姓名
-	private String username;//用户名
-	private String password;//密码
-	private String permission = "教师";//用户权限为“教师”
+
+	/**
+	 * 教师用户实体
+	 * 
+	 * @author SwYoung
+	 * @version V1.0
+	 * @since 2019-4-29
+	 */
+
+	private String name;// 姓名
+	private String username;// 用户名
+	private String password;// 密码
+	private String permission = "教师";// 用户权限为“教师”
 
 	public String getUsername() {
 		return username;
@@ -59,7 +60,7 @@ public class Teacher implements User {
 	@Override
 	public void setSno(String sno) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -71,7 +72,7 @@ public class Teacher implements User {
 	@Override
 	public void setGender(String gender) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -83,7 +84,7 @@ public class Teacher implements User {
 	@Override
 	public void setBirthday(Date birthday) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -95,7 +96,7 @@ public class Teacher implements User {
 	@Override
 	public void setScores(Map<String, Integer> scores) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -107,6 +108,6 @@ public class Teacher implements User {
 	@Override
 	public void setSchoolClass(String schoolClass) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

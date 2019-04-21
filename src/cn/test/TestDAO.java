@@ -13,19 +13,20 @@ import cn.rain.dao.UserDao;
 import cn.rain.dao.impl.UsersDaoImpl;
 import cn.rain.domain.Teacher;
 
-/** 
-* 测试功能的类
-* @author  rain 
-* @version 2014-09-10
-* @since   JDK1.6
-*/
+/**
+ * 测试功能的类
+ * 
+ * @author SwYoung
+ * @version V1.0
+ * @since 2019-4-29
+ */
 
 public class TestDAO {
 
 	@Test
 	public void testAdd() {
 		UserDao dao = new UsersDaoImpl();
-	
+
 		Map<String, Object> map = new LinkedHashMap<String, Object>();
 		map.put("username", "rain");
 		map.put("password", "rain");
@@ -35,7 +36,6 @@ public class TestDAO {
 		map.put("birthday", new Date());
 		map.put("schoolClass", "信管一班");
 
-		
 		Teacher teacher = new Teacher();
 		teacher.setName("丁天翔");
 		teacher.setUsername("001");
@@ -80,34 +80,33 @@ public class TestDAO {
 			System.out.println("没有这个学生");
 		}
 	}
-	
-	
+
 	@Test
-	public void testGetSbujects(){
+	public void testGetSbujects() {
 		UserDao dao = new UsersDaoImpl();
 		System.out.println(dao.getSubjects("3113004681"));
 	}
-	
+
 	@Test
-	public void testUpdateScores(){
+	public void testUpdateScores() {
 		UserDao dao = new UsersDaoImpl();
 		dao.updateScore("3113004681", "高数", 20);
 	}
-	
+
 	@Test
-	public void testGetAllsubByClass(){
+	public void testGetAllsubByClass() {
 		UserDao dao = new UsersDaoImpl();
 		System.out.println(dao.getAllsubjectsByClass("信管一班"));
 	}
-	
+
 	@Test
-	public void testGetUsernames(){
+	public void testGetUsernames() {
 		UserDao dao = new UsersDaoImpl();
 		System.out.println(dao.getUsernames());
 	}
-	
+
 	@Test
-	public void testDeleteUser(){
+	public void testDeleteUser() {
 		UserDao dao = new UsersDaoImpl();
 		dao.deleteUser("cc");
 	}

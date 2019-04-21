@@ -39,15 +39,15 @@ import cn.rain.domain.User;
 
 import javax.swing.JComboBox;
 
-/** 
-* 教师使用界面查询面板 
-* @author  rain 
-* @version 2014-09-10
-* @since   JDK1.6
-*/
+/**
+ * 教师使用界面查询面板
+ * 
+ * @author SwYoung
+ * @version V1.0
+ * @since 2019-4-29
+ */
 
-public class Teac_FindPanel extends JPanel implements ActionListener,
-		DocumentListener {
+public class Teac_FindPanel extends JPanel implements ActionListener, DocumentListener {
 
 	private static final long serialVersionUID = 2167572405318362876L;
 
@@ -83,10 +83,9 @@ public class Teac_FindPanel extends JPanel implements ActionListener,
 	JRadioButton upRadio;
 
 	public Teac_FindPanel() {
-		
+
 		try {
-			UIManager
-					.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 		} catch (ClassNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -165,8 +164,7 @@ public class Teac_FindPanel extends JPanel implements ActionListener,
 
 		findButton = new JButton();
 		findButton.setBounds(534, 122, 79, 23);
-		findButton.setIcon(new javax.swing.ImageIcon(getClass().getResource(
-				"/images/find_Button.png")));
+		findButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/find_Button.png")));
 		findButton.addActionListener(this);
 		add(findButton);
 
@@ -215,8 +213,7 @@ public class Teac_FindPanel extends JPanel implements ActionListener,
 		add(subjectField);
 
 		sortButton = new JButton();
-		sortButton.setIcon(new javax.swing.ImageIcon(getClass().getResource(
-				"/images/sort_Button.png")));
+		sortButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sort_Button.png")));
 		sortButton.setBounds(541, 290, 73, 23);
 		sortButton.addActionListener(this);
 		add(sortButton);
@@ -236,9 +233,8 @@ public class Teac_FindPanel extends JPanel implements ActionListener,
 
 		sortGroup.add(downRadio);
 		sortGroup.add(upRadio);
-		
-		ImageIcon labIma = new javax.swing.ImageIcon(getClass().getResource(
-				"/images/teacher_panel.png"));
+
+		ImageIcon labIma = new javax.swing.ImageIcon(getClass().getResource("/images/teacher_panel.png"));
 		JLabel jlabel = new JLabel(labIma);
 		add(jlabel, new Integer(Integer.MIN_VALUE));
 		jlabel.setBounds(0, 0, labIma.getIconWidth(), labIma.getIconHeight());
@@ -293,8 +289,7 @@ public class Teac_FindPanel extends JPanel implements ActionListener,
 				value = (Integer) model.getValueAt(i, columns - 1);
 				map.put(name, value);
 			}
-			Map<String, Integer> tables = dao
-					.sortTable(map, sortMethod);
+			Map<String, Integer> tables = dao.sortTable(map, sortMethod);
 			Iterator<Entry<String, Integer>> iterator = tables.entrySet().iterator();
 			if (columns == 2) {
 				showTable2Columns(iterator);
@@ -337,8 +332,7 @@ public class Teac_FindPanel extends JPanel implements ActionListener,
 			Enumeration<AbstractButton> en = findMethodRadio.getElements();
 			while (en.hasMoreElements()) {
 
-				AbstractButton abstractButton = (AbstractButton) en
-						.nextElement();
+				AbstractButton abstractButton = (AbstractButton) en.nextElement();
 				if (abstractButton.isSelected()) {
 
 					if (abstractButton.getText().equals("按学号查询")) {
@@ -356,8 +350,7 @@ public class Teac_FindPanel extends JPanel implements ActionListener,
 			Enumeration<AbstractButton> enumeration = group.getElements();
 			while (enumeration.hasMoreElements()) {
 
-				AbstractButton abstractButton = (AbstractButton) enumeration
-						.nextElement();
+				AbstractButton abstractButton = (AbstractButton) enumeration.nextElement();
 				if (abstractButton.isSelected()) {
 					if (abstractButton.getText().equals("查询指定学期成绩")) {
 						timeMethod = "term";
@@ -371,57 +364,40 @@ public class Teac_FindPanel extends JPanel implements ActionListener,
 
 			if (method == null) {
 
-				JOptionPane
-						.showMessageDialog(
-								null,
-								new JLabel(
-										"<html><h2><font color='red'>请选择正确的查询方式！</font></h2></html>"),
-								"警告", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null,
+						new JLabel("<html><h2><font color='red'>请选择正确的查询方式！</font></h2></html>"), "警告",
+						JOptionPane.ERROR_MESSAGE);
 
 			} else {
 				if (method.equals("sno")) {
 					try {
-						scores = dao.findScores(snoField.getText().trim(),
-								timeMethod, num);
-						Iterator<Entry<String, Integer>> iterator = scores
-								.entrySet().iterator();
+						scores = dao.findScores(snoField.getText().trim(), timeMethod, num);
+						Iterator<Entry<String, Integer>> iterator = scores.entrySet().iterator();
 						showTable2Columns(iterator);
 
 					} catch (UserNotFoundException e1) {
-						JOptionPane
-								.showMessageDialog(
-										null,
-										new JLabel(
-												"<html><h2><font color='red'>学号输入有误<br/>，请重新输入</font></h2></html>"),
-										"警告", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null,
+								new JLabel("<html><h2><font color='red'>学号输入有误<br/>，请重新输入</font></h2></html>"), "警告",
+								JOptionPane.ERROR_MESSAGE);
 					}
 				} else if (method.equals("name")) {
-					User stu = dao.findStudentByName(nameField.getText()
-							.trim());
+					User stu = dao.findStudentByName(nameField.getText().trim());
 					if (stu != null) {
 
 						try {
-							scores = dao.findScores(stu.getSno(), timeMethod,
-									num);
-							Iterator<Entry<String, Integer>> iterator = scores
-									.entrySet().iterator();
+							scores = dao.findScores(stu.getSno(), timeMethod, num);
+							Iterator<Entry<String, Integer>> iterator = scores.entrySet().iterator();
 							showTable2Columns(iterator);
 
 						} catch (UserNotFoundException e1) {
-							JOptionPane
-									.showMessageDialog(
-											null,
-											new JLabel(
-													"<html><h2><font color='red'>查询失败！</font></h2></html>"),
-											"警告", JOptionPane.ERROR_MESSAGE);
+							JOptionPane.showMessageDialog(null,
+									new JLabel("<html><h2><font color='red'>查询失败！</font></h2></html>"), "警告",
+									JOptionPane.ERROR_MESSAGE);
 						}
 					} else {
-						JOptionPane
-								.showMessageDialog(
-										null,
-										new JLabel(
-												"<html><h2><font color='red'>未找到此学生<br/>，请重新输入</font></h2></html>"),
-										"警告", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null,
+								new JLabel("<html><h2><font color='red'>未找到此学生<br/>，请重新输入</font></h2></html>"), "警告",
+								JOptionPane.ERROR_MESSAGE);
 					}
 				} else if (method.equals("high") || method.equals("low")) {
 					try {
@@ -429,23 +405,17 @@ public class Teac_FindPanel extends JPanel implements ActionListener,
 						if (method.equals("low")) {
 							isHigh = false;
 						}
-						Map<String, Integer> subscores = dao
-								.findSubscoresBynum(subjectField.getText()
-										.trim(), Integer.parseInt(scoreField
-										.getText().trim()), isHigh);
+						Map<String, Integer> subscores = dao.findSubscoresBynum(subjectField.getText().trim(),
+								Integer.parseInt(scoreField.getText().trim()), isHigh);
 
-						Iterator<Entry<String, Integer>> iterator = subscores
-								.entrySet().iterator();
+						Iterator<Entry<String, Integer>> iterator = subscores.entrySet().iterator();
 						showTable3Columns(iterator);
 
 					} catch (Exception e1) {
 						e1.printStackTrace();
-						JOptionPane
-								.showMessageDialog(
-										null,
-										new JLabel(
-												"<html><h2><font color='red'>查询失败！</font></h2></html>"),
-										"警告", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null,
+								new JLabel("<html><h2><font color='red'>查询失败！</font></h2></html>"), "警告",
+								JOptionPane.ERROR_MESSAGE);
 					}
 				}
 			}

@@ -3,27 +3,30 @@ package cn.rain.domain;
 import java.util.Date;
 import java.util.Map;
 
-/** 
-* 学生用户实体 
-* @author  rain 
-* @version 2014-09-10
-* @since   JDK1.6
-*/ 
+/**
+ * 学生用户实体
+ * 
+ * @author SwYoung
+ * @version V1.0
+ * @since 2019-4-29
+ */
 
-public class Student implements User{
-	
-	private String username;//用户名
-	private String password;//密码
-	private String permission = "学生";//用户权限为“学生”
+public class Student implements User {
 
-	private String sno;//学号
-	private String name;//姓名
-	private String gender;//性别
-	private Date birthday;//出生日期
-	private Map<String, Integer> scores;//分数集合
-	private String schoolClass;//班级
+	private String username;// 用户名
+	private String password;// 密码
+	private String permission = "学生";// 用户权限为“学生”
 
-	/* (non-Javadoc)
+	private String sno;// 学号
+	private String name;// 姓名
+	private String gender;// 性别
+	private Date birthday;// 出生日期
+	private Map<String, Integer> scores;// 分数集合
+	private String schoolClass;// 班级
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see cn.rain.domain.User#getUsername()
 	 */
 	@Override
@@ -31,7 +34,9 @@ public class Student implements User{
 		return username;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see cn.rain.domain.User#setUsername(java.lang.String)
 	 */
 	@Override
@@ -39,7 +44,9 @@ public class Student implements User{
 		this.username = username;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see cn.rain.domain.User#getPassword()
 	 */
 	@Override
@@ -47,7 +54,9 @@ public class Student implements User{
 		return password;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see cn.rain.domain.User#setPassword(java.lang.String)
 	 */
 	@Override
@@ -55,7 +64,9 @@ public class Student implements User{
 		this.password = password;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see cn.rain.domain.User#isPermission()
 	 */
 	@Override
@@ -63,7 +74,9 @@ public class Student implements User{
 		return permission;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see cn.rain.domain.User#setPermission(boolean)
 	 */
 	@Override
@@ -71,7 +84,9 @@ public class Student implements User{
 		this.permission = permission;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see cn.rain.domain.User#getSno()
 	 */
 	@Override
@@ -79,7 +94,9 @@ public class Student implements User{
 		return sno;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see cn.rain.domain.User#setSno(java.lang.String)
 	 */
 	@Override
@@ -87,7 +104,9 @@ public class Student implements User{
 		this.sno = sno;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see cn.rain.domain.User#getName()
 	 */
 	@Override
@@ -95,7 +114,9 @@ public class Student implements User{
 		return name;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see cn.rain.domain.User#setName(java.lang.String)
 	 */
 	@Override
@@ -103,7 +124,9 @@ public class Student implements User{
 		this.name = name;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see cn.rain.domain.User#getGender()
 	 */
 	@Override
@@ -111,7 +134,9 @@ public class Student implements User{
 		return gender;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see cn.rain.domain.User#setGender(java.lang.String)
 	 */
 	@Override
@@ -119,7 +144,9 @@ public class Student implements User{
 		this.gender = gender;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see cn.rain.domain.User#getBirthday()
 	 */
 	@Override
@@ -127,7 +154,9 @@ public class Student implements User{
 		return birthday;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see cn.rain.domain.User#setBirthday(java.util.Date)
 	 */
 	@Override
@@ -135,7 +164,9 @@ public class Student implements User{
 		this.birthday = birthday;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see cn.rain.domain.User#getScores()
 	 */
 	@Override
@@ -143,7 +174,9 @@ public class Student implements User{
 		return scores;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see cn.rain.domain.User#setScores(java.util.Map)
 	 */
 	@Override
@@ -151,7 +184,9 @@ public class Student implements User{
 		this.scores = scores;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see cn.rain.domain.User#getSchoolClass()
 	 */
 	@Override
@@ -159,7 +194,9 @@ public class Student implements User{
 		return schoolClass;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see cn.rain.domain.User#setSchoolClass(java.lang.String)
 	 */
 	@Override

@@ -24,12 +24,13 @@ import cn.rain.Exceptions.UserNotFoundException;
 import cn.rain.dao.UserDao;
 import cn.rain.dao.impl.UsersDaoImpl;
 
-/** 
-* 教师使用界面统计成绩面板
-* @author  rain 
-* @version 2014-09-10
-* @since   JDK1.6
-*/
+/**
+ * 教师使用界面统计成绩面板
+ * 
+ * @author SwYoung
+ * @version V1.0
+ * @since 2019-4-29
+ */
 
 public class Teac_StatisticPanel extends JPanel implements ActionListener {
 
@@ -46,7 +47,6 @@ public class Teac_StatisticPanel extends JPanel implements ActionListener {
 	JButton showButton;
 
 	public Teac_StatisticPanel() {
-
 
 		setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		setBounds(0, 100, 700, 400);
@@ -80,14 +80,12 @@ public class Teac_StatisticPanel extends JPanel implements ActionListener {
 		add(subjectBox);
 
 		showButton = new JButton();
-		showButton.setIcon(new javax.swing.ImageIcon(getClass().getResource(
-				"/images/statistic.png")));
+		showButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/statistic.png")));
 		showButton.addActionListener(this);
 		showButton.setBounds(501, 21, 134, 23);
 		add(showButton);
-		
-		ImageIcon labIma = new javax.swing.ImageIcon(getClass().getResource(
-				"/images/teacher_panel.png"));
+
+		ImageIcon labIma = new javax.swing.ImageIcon(getClass().getResource("/images/teacher_panel.png"));
 		JLabel jlabel = new JLabel(labIma);
 		add(jlabel, new Integer(Integer.MIN_VALUE));
 		jlabel.setBounds(0, 0, labIma.getIconWidth(), labIma.getIconHeight());
@@ -108,18 +106,13 @@ public class Teac_StatisticPanel extends JPanel implements ActionListener {
 
 		if (e.getSource() == showButton) {
 			try {
-				String[][] result = dao.statistics(classBox
-						.getSelectedItem().toString(), subjectBox
-						.getSelectedItem().toString());
+				String[][] result = dao.statistics(classBox.getSelectedItem().toString(),
+						subjectBox.getSelectedItem().toString());
 				showTable3Columns(result);
 
 			} catch (UserNotFoundException e1) {
-				JOptionPane
-						.showMessageDialog(
-								null,
-								new JLabel(
-										"<html><h2><font color='red'>查询失败！</font></h2></html>"),
-								"警告", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'>查询失败！</font></h2></html>"),
+						"警告", JOptionPane.ERROR_MESSAGE);
 			}
 		}
 	}
@@ -135,7 +128,7 @@ public class Teac_StatisticPanel extends JPanel implements ActionListener {
 		int rowsCount = 0;
 
 		String[] interval = { "60分以下", "60-70分", "70-80分", "80-90分", "90-100分" };
-		
+
 		for (int i = 0; i < interval.length; i++) {
 			data = new Vector<Object>();
 			data.addElement(interval[rowsCount]);
@@ -144,7 +137,7 @@ public class Teac_StatisticPanel extends JPanel implements ActionListener {
 			row.addElement(data);
 			rowsCount++;
 		}
-		
+
 		DefaultTableModel model = new DefaultTableModel(row, head);
 		table.setModel(model);
 		table.setFont(new Font("微软雅黑", Font.PLAIN, 13));

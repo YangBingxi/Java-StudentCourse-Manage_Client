@@ -49,13 +49,12 @@ import java.awt.Font;
 /**
  * —ß…˙”√ªßΩÁ√Ê
  * 
- * @author rain
- * @version 2014-09-10
- * @since JDK1.6
+ * @author SwYoung
+ * @version V1.0
+ * @since 2019-4-29
  */
 
-public class StudentFrame extends JFrame implements ActionListener,
-		FocusListener {
+public class StudentFrame extends JFrame implements ActionListener, FocusListener {
 
 	private static final long serialVersionUID = 1L;
 
@@ -86,7 +85,7 @@ public class StudentFrame extends JFrame implements ActionListener,
 	boolean sortMethod = false;
 
 	public StudentFrame(User student) throws RemoteException {
-		
+
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
@@ -108,15 +107,13 @@ public class StudentFrame extends JFrame implements ActionListener,
 		contentPane.setSize(700, 500);
 		contentPane.setOpaque(false);
 
-		ImageIcon labIma = new javax.swing.ImageIcon(getClass().getResource(
-				"/images/stuback.png"));
+		ImageIcon labIma = new javax.swing.ImageIcon(getClass().getResource("/images/stuback.png"));
 		JLabel jlabel = new JLabel(labIma);
 		getLayeredPane().add(jlabel, new Integer(Integer.MIN_VALUE));
 		jlabel.setBounds(0, 0, labIma.getIconWidth(), labIma.getIconHeight());
 
 		try {
-			UIManager
-					.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 		} catch (ClassNotFoundException e1) {
 			e1.printStackTrace();
 		} catch (InstantiationException e1) {
@@ -196,8 +193,7 @@ public class StudentFrame extends JFrame implements ActionListener,
 		findButton.setForeground(new Color(153, 255, 204));
 		findButton.setFont(new Font("Œ¢»Ì—≈∫⁄", Font.PLAIN, 13));
 
-		findButton.setIcon(new javax.swing.ImageIcon(getClass().getResource(
-				"/images/find.png")));
+		findButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/find.png")));
 		findButton.setBounds(482, 86, 82, 23);
 		findButton.setBackground(new Color(0, 102, 204));
 		contentPane.add(findButton);
@@ -222,15 +218,13 @@ public class StudentFrame extends JFrame implements ActionListener,
 		sortButton.setForeground(new Color(153, 255, 204));
 		sortButton.setFont(new Font("Œ¢»Ì—≈∫⁄", Font.PLAIN, 12));
 
-		sortButton.setIcon(new javax.swing.ImageIcon(getClass().getResource(
-				"/images/up.png")));
+		sortButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/up.png")));
 		sortButton.setBounds(532, 346, 82, 23);
 		sortButton.addActionListener(this);
 		sortButton.setBackground(new Color(0, 102, 204));
 		contentPane.add(sortButton);
 
-		JLabel label_2 = new JLabel("<html>ª∂”≠ƒ˙£¨<font color='#930093'>"
-				+ student.getName() + "</font> Õ¨—ß£°</html>");
+		JLabel label_2 = new JLabel("<html>ª∂”≠ƒ˙£¨<font color='#930093'>" + student.getName() + "</font> Õ¨—ß£°</html>");
 		label_2.setFont(new Font("Œ¢»Ì—≈∫⁄", Font.PLAIN, 14));
 		label_2.setBounds(22, 10, 430, 15);
 		contentPane.add(label_2);
@@ -266,27 +260,21 @@ public class StudentFrame extends JFrame implements ActionListener,
 
 		try {
 			if (method.equals("subject")) {
-				Map<String, Integer> map = dao.findScore(student.getSno(),
-						subjectName.getText().trim());
+				Map<String, Integer> map = dao.findScore(student.getSno(), subjectName.getText().trim());
 				scores = map != null ? map : null;
 			} else {
 				scores = dao.findScores(student.getSno(), method, num);
 			}
 		} catch (UserNotFoundException e1) {
-			JOptionPane
-					.showMessageDialog(
-							null,
-							new JLabel(
-									"<html><h2><font color='red'>≤È—Ø ß∞‹£¨«Î÷ÿ ‘£°</font></h2></html>"),
-							"æØ∏Ê", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'>≤È—Ø ß∞‹£¨«Î÷ÿ ‘£°</font></h2></html>"),
+					"æØ∏Ê", JOptionPane.ERROR_MESSAGE);
 		}
 
 		if (e.getSource() == findButton && scores != null) {
 
 			subjectName.setText("");
 
-			Iterator<Entry<String, Integer>> iterator = scores.entrySet()
-					.iterator();
+			Iterator<Entry<String, Integer>> iterator = scores.entrySet().iterator();
 
 			showTable(iterator);
 
@@ -303,8 +291,7 @@ public class StudentFrame extends JFrame implements ActionListener,
 				map.put(name, value);
 			}
 			Map<String, Integer> tables = dao.sortTable(map, sortMethod);
-			Iterator<Entry<String, Integer>> iterator = tables.entrySet()
-					.iterator();
+			Iterator<Entry<String, Integer>> iterator = tables.entrySet().iterator();
 			showTable(iterator);
 		}
 	}

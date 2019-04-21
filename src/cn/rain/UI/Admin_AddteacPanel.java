@@ -18,12 +18,13 @@ import cn.rain.Exceptions.UserExistedException;
 import cn.rain.dao.UserDao;
 import cn.rain.dao.impl.UsersDaoImpl;
 
-/** 
-* 管理员界面添加教师面板 
-* @author  rain 
-* @version 2014-09-10
-* @since   JDK1.6
-*/ 
+/**
+ * 管理员界面添加教师面板
+ * 
+ * @author SwYoung
+ * @version V1.0
+ * @since 2019-4-29
+ */
 
 public class Admin_AddteacPanel extends JPanel implements ActionListener {
 
@@ -90,34 +91,26 @@ public class Admin_AddteacPanel extends JPanel implements ActionListener {
 			teacher.put("name", name);
 			teacher.put("permission", "教师");
 
-
 			UserDao dao = new UsersDaoImpl();
 			try {
-				if (username.equals("") || password.equals("")|| name.equals("")) {
-					JOptionPane
-					.showMessageDialog(
-							null,
-							new JLabel(
-									"<html><h2><font color='red'>请填写完整用户信息！</font></h2></html>"),
-							"警告", JOptionPane.ERROR_MESSAGE);
+				if (username.equals("") || password.equals("") || name.equals("")) {
+					JOptionPane.showMessageDialog(null,
+							new JLabel("<html><h2><font color='red'>请填写完整用户信息！</font></h2></html>"), "警告",
+							JOptionPane.ERROR_MESSAGE);
 
-				}else{
+				} else {
 					dao.addUser(teacher);
-					
-					JOptionPane.showMessageDialog(null, new JLabel(
-							"<html><h2><font color='green'>添加成功！</font></h2></html>"),
-							"提醒", JOptionPane.INFORMATION_MESSAGE);
+
+					JOptionPane.showMessageDialog(null,
+							new JLabel("<html><h2><font color='green'>添加成功！</font></h2></html>"), "提醒",
+							JOptionPane.INFORMATION_MESSAGE);
 					usernameField.setText("");
 					passwordField.setText("");
 					nameField.setText("");
 				}
 			} catch (UserExistedException e1) {
-				JOptionPane
-						.showMessageDialog(
-								null,
-								new JLabel(
-										"<html><h2><font color='red'>用户已存在！</font></h2></html>"),
-								"警告", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'>用户已存在！</font></h2></html>"),
+						"警告", JOptionPane.ERROR_MESSAGE);
 			} catch (RemoteException e1) {
 				e1.printStackTrace();
 			}

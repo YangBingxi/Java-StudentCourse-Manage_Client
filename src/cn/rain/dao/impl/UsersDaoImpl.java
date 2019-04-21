@@ -13,25 +13,28 @@ import cn.rain.domain.Teacher;
 import cn.rain.domain.User;
 import cn.rain.utils.ConnectUtil;
 
-/** 
-* 数据交互接口实现类 
-* @author  rain 
-* @version 2014-09-10
-* @since   JDK1.6
-*/ 
+/**
+ * 数据交互接口实现类
+ * 
+ * @author SwYoung
+ * @version V1.0
+ * @since 2019-4-29
+ */
 public class UsersDaoImpl implements UserDao {
 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see cn.rain.dao.UserDao#find(java.lang.String, java.lang.String,
-	 * boolean)
+	 * @see cn.rain.dao.UserDao#find(java.lang.String, java.lang.String, boolean)
 	 */
 
 	UserDao dao = ConnectUtil.getDao();
 
-	/* (non-Javadoc)
-	 * @see cn.rain.dao.impl.UserDao#find(java.lang.String, java.lang.String, boolean)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see cn.rain.dao.impl.UserDao#find(java.lang.String, java.lang.String,
+	 * boolean)
 	 */
 	@Override
 	public User find(String username, String password, String permission) {
@@ -48,7 +51,8 @@ public class UsersDaoImpl implements UserDao {
 		return dao.findStudentBySno(sno);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
 	 * 
 	 * @see cn.rain.dao.impl.UserDao#findStudentByName(java.lang.String)
 	 */
@@ -79,26 +83,23 @@ public class UsersDaoImpl implements UserDao {
 		dao.addUser(map);
 	}
 
-	/* 
+	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see cn.rain.dao.UserDao#addScores(java.lang.String, java.util.Map, int)
 	 */
 	@Override
-	public boolean addScores(String sno, Map<String, Integer> scores, int term)
-			throws UserNotFoundException {
+	public boolean addScores(String sno, Map<String, Integer> scores, int term) throws UserNotFoundException {
 		return dao.addScores(sno, scores, term);
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see cn.rain.dao.UserDao#findScores(java.lang.String, java.lang.String,
-	 * int)
+	 * @see cn.rain.dao.UserDao#findScores(java.lang.String, java.lang.String, int)
 	 */
 	@Override
-	public Map<String, Integer> findScores(String sno, String method, int num)
-			throws UserNotFoundException {
+	public Map<String, Integer> findScores(String sno, String method, int num) throws UserNotFoundException {
 		return dao.findScores(sno, method, num);
 	}
 
@@ -108,8 +109,7 @@ public class UsersDaoImpl implements UserDao {
 	 * @see cn.rain.dao.UserDao#findScore(java.lang.String, java.lang.String)
 	 */
 	@Override
-	public Map<String, Integer> findScore(String sno, String subject)
-			throws UserNotFoundException {
+	public Map<String, Integer> findScore(String sno, String subject) throws UserNotFoundException {
 
 		return dao.findScore(sno, subject);
 
@@ -121,8 +121,7 @@ public class UsersDaoImpl implements UserDao {
 	 * @see cn.rain.dao.UserDao#sortTable(java.util.Map, boolean)
 	 */
 	@Override
-	public Map<String, Integer> sortTable(Map<String, Integer> map,
-			boolean sortMethod){
+	public Map<String, Integer> sortTable(Map<String, Integer> map, boolean sortMethod) {
 		return dao.sortTable(map, sortMethod);
 	}
 
@@ -161,8 +160,7 @@ public class UsersDaoImpl implements UserDao {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see cn.rain.dao.UserDao#updateScore(java.lang.String, java.lang.String,
-	 * int)
+	 * @see cn.rain.dao.UserDao#updateScore(java.lang.String, java.lang.String, int)
 	 */
 	@Override
 	public boolean updateScore(String sno, String subject, int score) {
@@ -173,8 +171,7 @@ public class UsersDaoImpl implements UserDao {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see cn.rain.dao.UserDao#getSubAttribute(java.lang.String,
-	 * java.lang.String)
+	 * @see cn.rain.dao.UserDao#getSubAttribute(java.lang.String, java.lang.String)
 	 */
 	@Override
 	public Attribute getSubAttribute(String sno, String subject) {
@@ -186,22 +183,23 @@ public class UsersDaoImpl implements UserDao {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see cn.rain.dao.UserDao#findSubscoresBynum(java.lang.String, int,
-	 * boolean)
+	 * @see cn.rain.dao.UserDao#findSubscoresBynum(java.lang.String, int, boolean)
 	 */
 	@Override
-	public Map<String, Integer> findSubscoresBynum(String subject, int num,
-			boolean isHigh) throws UserNotFoundException {
+	public Map<String, Integer> findSubscoresBynum(String subject, int num, boolean isHigh)
+			throws UserNotFoundException {
 
 		return dao.findSubscoresBynum(subject, num, isHigh);
 	}
 
-	/* (non-Javadoc)
-	 * @see cn.rain.dao.impl.UserDao#getClassScoresBysub(java.lang.String, java.lang.String)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see cn.rain.dao.impl.UserDao#getClassScoresBysub(java.lang.String,
+	 * java.lang.String)
 	 */
 	@Override
-	public List<Integer> getClassScoresBysub(String schoolClass, String subject)
-			throws UserNotFoundException {
+	public List<Integer> getClassScoresBysub(String schoolClass, String subject) throws UserNotFoundException {
 
 		return dao.getClassScoresBysub(schoolClass, subject);
 	}
@@ -212,8 +210,7 @@ public class UsersDaoImpl implements UserDao {
 	 * @see cn.rain.dao.UserDao#statistics(java.lang.String, java.lang.String)
 	 */
 	@Override
-	public String[][] statistics(String schoolClass, String subject)
-			throws UserNotFoundException {
+	public String[][] statistics(String schoolClass, String subject) throws UserNotFoundException {
 
 		return dao.statistics(schoolClass, subject);
 	}

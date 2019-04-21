@@ -21,13 +21,12 @@ import cn.rain.dao.impl.UsersDaoImpl;
 /**
  * 教师使用界面修改成绩面板
  * 
- * @author rain
- * @version 2014-09-10
- * @since JDK1.6
+ * @author SwYoung
+ * @version V1.0
+ * @since 2019-4-29
  */
 
-public class Teac_UpdatePanel extends JPanel implements ActionListener,
-		DocumentListener {
+public class Teac_UpdatePanel extends JPanel implements ActionListener, DocumentListener {
 
 	private static final long serialVersionUID = 4004410198324316342L;
 	private JTextField snoField;
@@ -75,13 +74,11 @@ public class Teac_UpdatePanel extends JPanel implements ActionListener,
 
 		updateButton = new JButton();
 		updateButton.setBounds(400, 125, 100, 23);
-		updateButton.setIcon(new javax.swing.ImageIcon(getClass().getResource(
-				"/images/update_Button.png")));
+		updateButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/update_Button.png")));
 		updateButton.addActionListener(this);
 		add(updateButton);
 
-		ImageIcon labIma = new javax.swing.ImageIcon(getClass().getResource(
-				"/images/teacher_panel.png"));
+		ImageIcon labIma = new javax.swing.ImageIcon(getClass().getResource("/images/teacher_panel.png"));
 		JLabel jlabel = new JLabel(labIma);
 		add(jlabel, new Integer(Integer.MIN_VALUE));
 		jlabel.setBounds(0, 0, labIma.getIconWidth(), labIma.getIconHeight());
@@ -107,27 +104,20 @@ public class Teac_UpdatePanel extends JPanel implements ActionListener,
 				if (isNum) {
 					int scor = Integer.parseInt(score);
 					if (scor >= 0 && scor <= 100) {
-						isSucceed = dao.updateScore(snoField.getText().trim(),
-								subjectBox.getSelectedItem().toString(), scor);
+						isSucceed = dao.updateScore(snoField.getText().trim(), subjectBox.getSelectedItem().toString(),
+								scor);
 					}
 				}
 			}
 
 			if (!isSucceed) {
-				JOptionPane
-						.showMessageDialog(
-								null,
-								new JLabel(
-										"<html><h2><font color='red'>修改失败！</font></h2></html>"),
-								"警告", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'>修改失败！</font></h2></html>"),
+						"警告", JOptionPane.ERROR_MESSAGE);
 
 			} else {
-				JOptionPane
-						.showMessageDialog(
-								null,
-								new JLabel(
-										"<html><h2><font color='green'>修改成功！</font></h2></html>"),
-								"提示", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null,
+						new JLabel("<html><h2><font color='green'>修改成功！</font></h2></html>"), "提示",
+						JOptionPane.INFORMATION_MESSAGE);
 
 			}
 			snoField.setText("");

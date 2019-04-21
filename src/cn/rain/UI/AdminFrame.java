@@ -11,12 +11,13 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 
-/** 
-* 管理员界面框架
-* @author  rain 
-* @version 2014-09-10
-* @since   JDK1.6
-*/
+/**
+ * 管理员界面框架
+ * 
+ * @author SwYoung
+ * @version V1.0
+ * @since 2019-4-29
+ */
 
 public class AdminFrame extends JFrame implements ActionListener {
 
@@ -35,7 +36,7 @@ public class AdminFrame extends JFrame implements ActionListener {
 	private JButton delUserButton;
 
 	public AdminFrame() {
-		
+
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {

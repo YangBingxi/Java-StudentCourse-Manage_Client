@@ -33,9 +33,9 @@ import java.util.Map;
 /**
  * 用户登陆界面
  * 
- * @author rain
- * @version 2014-09-10
- * @since JDK1.6
+ * @author SwYoung
+ * @version V1.0
+ * @since 2019-4-29
  */
 
 public class LoginFrame extends JFrame implements ActionListener {
@@ -75,8 +75,7 @@ public class LoginFrame extends JFrame implements ActionListener {
 		contentPane.setLayout(null);
 		contentPane.setOpaque(false);
 
-		ImageIcon labIma = new javax.swing.ImageIcon(getClass().getResource(
-				"/images/back.png"));
+		ImageIcon labIma = new javax.swing.ImageIcon(getClass().getResource("/images/back.png"));
 
 		JLabel jlabel = new JLabel(labIma);
 		getLayeredPane().add(jlabel, new Integer(Integer.MIN_VALUE));
@@ -89,8 +88,7 @@ public class LoginFrame extends JFrame implements ActionListener {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lblNewLabel);
 
-		login.setIcon(new javax.swing.ImageIcon(getClass().getResource(
-				"/images/login.png")));
+		login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/login.png")));
 		login.setFont(new Font("微软雅黑", Font.PLAIN, 13));
 		login.setBackground(new Color(98, 183, 240));
 		login.setBounds(348, 304, 83, 30);
@@ -98,16 +96,14 @@ public class LoginFrame extends JFrame implements ActionListener {
 		contentPane.add(login);
 
 		JLabel usernamelab = new JLabel("用户名：");
-		usernamelab.setIcon(new javax.swing.ImageIcon(getClass().getResource(
-				"/images/username.png")));
+		usernamelab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/username.png")));
 		usernamelab.setFont(new Font("楷体", Font.PLAIN, 15));
 		usernamelab.setHorizontalAlignment(SwingConstants.LEFT);
 		usernamelab.setBounds(128, 163, 92, 30);
 		contentPane.add(usernamelab);
 
 		JLabel passwordlab = new JLabel("密码：");
-		passwordlab.setIcon(new javax.swing.ImageIcon(getClass().getResource(
-				"/images/password.png")));
+		passwordlab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/password.png")));
 		passwordlab.setFont(new Font("楷体", Font.PLAIN, 15));
 		passwordlab.setHorizontalAlignment(SwingConstants.LEFT);
 		passwordlab.setBounds(128, 241, 83, 30);
@@ -141,8 +137,7 @@ public class LoginFrame extends JFrame implements ActionListener {
 
 		JLabel label = new JLabel("");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setIcon(new javax.swing.ImageIcon(getClass().getResource(
-				"/images/log.png")));
+		label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/log.png")));
 		label.setBounds(81, 61, 81, 67);
 		contentPane.add(label);
 
@@ -170,8 +165,7 @@ public class LoginFrame extends JFrame implements ActionListener {
 
 			Enumeration<AbstractButton> en = group.getElements();
 			while (en.hasMoreElements()) {
-				AbstractButton abstractButton = (AbstractButton) en
-						.nextElement();
+				AbstractButton abstractButton = (AbstractButton) en.nextElement();
 				if (abstractButton.isSelected()) {
 					if (abstractButton.getName().equals("teacher")) {
 						permission = "教师";
@@ -181,17 +175,13 @@ public class LoginFrame extends JFrame implements ActionListener {
 
 						String adminName = admin.get("username");
 						String adminPassword = admin.get("password");
-						if (username.equals(adminName)
-								&& password.equals(adminPassword)) {
+						if (username.equals(adminName) && password.equals(adminPassword)) {
 							this.dispose();
 							new AdminFrame().setVisible(true);
 						} else {
-							JOptionPane
-									.showMessageDialog(
-											null,
-											new JLabel(
-													"<html><h2><font color='red'>用户名或密码错<br/>误，请重新输入</font></h2></html>"),
-											"警告", JOptionPane.ERROR_MESSAGE);
+							JOptionPane.showMessageDialog(null,
+									new JLabel("<html><h2><font color='red'>用户名或密码错<br/>误，请重新输入</font></h2></html>"),
+									"警告", JOptionPane.ERROR_MESSAGE);
 							textField.setText("");
 							passwordField.setText("");
 						}
@@ -215,12 +205,9 @@ public class LoginFrame extends JFrame implements ActionListener {
 						new TeacherFrame(user).setVisible(true);
 					}
 				} else {
-					JOptionPane
-							.showMessageDialog(
-									null,
-									new JLabel(
-											"<html><h2><font color='red'>用户名或密码错<br/>误，请重新输入</font></h2></html>"),
-									"警告", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							new JLabel("<html><h2><font color='red'>用户名或密码错<br/>误，请重新输入</font></h2></html>"), "警告",
+							JOptionPane.ERROR_MESSAGE);
 					textField.setText("");
 					passwordField.setText("");
 				}

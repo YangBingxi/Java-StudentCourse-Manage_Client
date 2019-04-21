@@ -1,11 +1,12 @@
 package cn.rain.Exceptions;
 
-/** 
-* 用户已存在时抛出此异常 
-* @author  rain 
-* @version 2014-09-10
-* @since   JDK1.6
-*/ 
+/**
+ * 用户已存在时抛出此异常
+ * 
+ * @author SwYoung
+ * @version V1.0
+ * @since 2019-4-29
+ */
 
 public class UserExistedException extends Exception {
 
@@ -16,8 +17,8 @@ public class UserExistedException extends Exception {
 		// TODO Auto-generated constructor stub
 	}
 
-	public UserExistedException(String message, Throwable cause,
-			boolean enableSuppression, boolean writableStackTrace) {
+	public UserExistedException(String message, Throwable cause, boolean enableSuppression,
+			boolean writableStackTrace) {
 		super();
 		// TODO Auto-generated constructor stub
 	}
