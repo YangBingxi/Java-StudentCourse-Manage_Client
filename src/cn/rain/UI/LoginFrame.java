@@ -58,14 +58,14 @@ public class LoginFrame extends JFrame implements ActionListener {
 	JPanel contentPane;
 	JTextField textField;
 	JPasswordField passwordField;
-	JButton login = new JButton("µÇÂ½");
+	JButton login = new JButton("µÇÂ¼");
 	ButtonGroup group = new ButtonGroup();
 	JRadioButton adminRadio;
 
 	public LoginFrame() {
 
 		setResizable(false);
-		setTitle("µÇÂ½");
+		setTitle("µÇÂ¼");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		int width = Toolkit.getDefaultToolkit().getScreenSize().width;
 		int height = Toolkit.getDefaultToolkit().getScreenSize().height;
@@ -109,13 +109,13 @@ public class LoginFrame extends JFrame implements ActionListener {
 		passwordlab.setBounds(128, 241, 83, 30);
 		contentPane.add(passwordlab);
 
-		textField = new JTextField("rain");
+		textField = new JTextField("SwYoung");
 		textField.setOpaque(false);
 		textField.setBounds(230, 165, 199, 27);
 		contentPane.add(textField);
 		textField.setColumns(10);
 
-		passwordField = new JPasswordField("rain");
+		passwordField = new JPasswordField("");
 		passwordField.setOpaque(false);
 		passwordField.setBounds(230, 243, 199, 27);
 		contentPane.add(passwordField);

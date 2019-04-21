@@ -28,16 +28,16 @@ public class TestDAO {
 		UserDao dao = new UsersDaoImpl();
 
 		Map<String, Object> map = new LinkedHashMap<String, Object>();
-		map.put("username", "rain");
-		map.put("password", "rain");
-		map.put("sno", "3113004681");
-		map.put("name", "小雨");
+		map.put("username", "SwYoung");
+		map.put("password", "2020");
+		map.put("sno", "B16012321");
+		map.put("name", "杨秉茜");
 		map.put("gender", "男");
 		map.put("birthday", new Date());
-		map.put("schoolClass", "信管一班");
+		map.put("schoolClass", "信息工程23班");
 
 		Teacher teacher = new Teacher();
-		teacher.setName("丁天翔");
+		teacher.setName("王诚");
 		teacher.setUsername("001");
 		teacher.setPassword("001");
 		try {
@@ -53,7 +53,7 @@ public class TestDAO {
 	@Test
 	public void testFind() {
 		UserDao dao = new UsersDaoImpl();
-		System.out.println(dao.findStudentBySno("3113004681").getUsername());
+		System.out.println(dao.findStudentBySno("B16012321").getUsername());
 	}
 
 	@Test
@@ -74,7 +74,7 @@ public class TestDAO {
 	public void testFindScores() {
 		UserDao dao = new UsersDaoImpl();
 		try {
-			Map<String, Integer> map = dao.findScores("3113004681", "term", 3);
+			Map<String, Integer> map = dao.findScores("B16012321", "term", 3);
 			System.out.println(map);
 		} catch (UserNotFoundException e) {
 			System.out.println("没有这个学生");
@@ -84,19 +84,19 @@ public class TestDAO {
 	@Test
 	public void testGetSbujects() {
 		UserDao dao = new UsersDaoImpl();
-		System.out.println(dao.getSubjects("3113004681"));
+		System.out.println(dao.getSubjects("B16012321"));
 	}
 
 	@Test
 	public void testUpdateScores() {
 		UserDao dao = new UsersDaoImpl();
-		dao.updateScore("3113004681", "高数", 20);
+		dao.updateScore("B16012321", "高数", 20);
 	}
 
 	@Test
 	public void testGetAllsubByClass() {
 		UserDao dao = new UsersDaoImpl();
-		System.out.println(dao.getAllsubjectsByClass("信管一班"));
+		System.out.println(dao.getAllsubjectsByClass("信息工程23班"));
 	}
 
 	@Test

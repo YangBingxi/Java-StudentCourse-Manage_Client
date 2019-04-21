@@ -54,12 +54,12 @@ public class Teac_UpdatePanel extends JPanel implements ActionListener, Document
 		snoField.setColumns(10);
 
 		JLabel label = new JLabel("¿Î³ÌÃû³Æ");
-		label.setBounds(362, 73, 54, 15);
+		label.setBounds(362, 73, 60, 15);
 		add(label);
 
 		subjectBox = new JComboBox<String>();
 		subjectBox.setEnabled(false);
-		subjectBox.setBounds(426, 70, 76, 21);
+		subjectBox.setBounds(426, 70, 100, 21);
 		add(subjectBox);
 
 		scoreField = new JTextField();

@@ -64,7 +64,7 @@ public class Teac_StatisticPanel extends JPanel implements ActionListener {
 
 		classBox = new JComboBox<String>();
 		classBox.addActionListener(this);
-		classBox.setBounds(111, 21, 92, 21);
+		classBox.setBounds(111, 21, 120, 21);
 		List<String> classes = dao.getAllClass();
 		for (int i = 0; i < classes.size(); i++) {
 			classBox.addItem(classes.get(i));

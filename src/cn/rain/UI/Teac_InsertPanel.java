@@ -44,7 +44,7 @@ public class Teac_InsertPanel extends JPanel implements ActionListener {
 		setVisible(false);
 
 		JLabel lblNewLabel = new JLabel("学号");
-		lblNewLabel.setBounds(135, 66, 54, 15);
+		lblNewLabel.setBounds(130, 66, 54, 15);
 		add(lblNewLabel);
 
 		snoField = new JTextField();
@@ -54,7 +54,7 @@ public class Teac_InsertPanel extends JPanel implements ActionListener {
 		snoField.setColumns(10);
 
 		JLabel label = new JLabel("课程名称");
-		label.setBounds(135, 122, 54, 15);
+		label.setBounds(130, 122, 70, 15);
 		add(label);
 
 		scoreField = new JTextField();
@@ -64,7 +64,7 @@ public class Teac_InsertPanel extends JPanel implements ActionListener {
 		scoreField.setColumns(10);
 
 		JLabel label_1 = new JLabel("成绩");
-		label_1.setBounds(390, 122, 42, 15);
+		label_1.setBounds(390, 122, 50, 15);
 		add(label_1);
 
 		insertButton = new JButton();
@@ -80,11 +80,11 @@ public class Teac_InsertPanel extends JPanel implements ActionListener {
 		subjectField.setColumns(10);
 
 		JLabel label_2 = new JLabel("学期");
-		label_2.setBounds(390, 66, 42, 15);
+		label_2.setBounds(390, 66, 50, 15);
 		add(label_2);
 
 		termComboBox = new JComboBox<Integer>();
-		termComboBox.setBounds(458, 63, 32, 21);
+		termComboBox.setBounds(458, 63, 50, 21);
 		for (int i = 1; i < 9; i++) {
 			termComboBox.addItem(i);
 		}

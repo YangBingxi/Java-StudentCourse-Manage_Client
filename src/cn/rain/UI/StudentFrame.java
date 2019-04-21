@@ -126,23 +126,23 @@ public class StudentFrame extends JFrame implements ActionListener, FocusListene
 
 		yearBox = new JComboBox<Integer>();
 		yearBox.setForeground(new Color(0, 0, 0));
-		yearBox.setBounds(164, 40, 32, 21);
+		yearBox.setBounds(164, 40, 33, 21);
 		yearBox.addFocusListener(this);
 		contentPane.add(yearBox);
 
 		JLabel label = new JLabel("选择学年");
 		label.setOpaque(false);
-		label.setBounds(100, 42, 54, 15);
+		label.setBounds(90, 42, 60, 15);
 		contentPane.add(label);
 
 		JLabel label_1 = new JLabel("选择学期");
 		label_1.setOpaque(false);
-		label_1.setBounds(245, 42, 54, 15);
+		label_1.setBounds(240, 42, 60, 15);
 		contentPane.add(label_1);
 
 		termBox = new JComboBox<Integer>();
 		termBox.setForeground(new Color(0, 0, 0));
-		termBox.setBounds(309, 40, 32, 21);
+		termBox.setBounds(309, 40, 33, 21);
 		termBox.addFocusListener(this);
 		contentPane.add(termBox);
 
@@ -159,7 +159,7 @@ public class StudentFrame extends JFrame implements ActionListener, FocusListene
 		contentPane.add(scrollPane);
 
 		JLabel lblNewLabel = new JLabel("课程名称");
-		lblNewLabel.setBounds(404, 42, 54, 15);
+		lblNewLabel.setBounds(404, 42, 60, 15);
 		lblNewLabel.setOpaque(false);
 		contentPane.add(lblNewLabel);
 
@@ -171,18 +171,18 @@ public class StudentFrame extends JFrame implements ActionListener, FocusListene
 		subjectName.addFocusListener(this);
 
 		yearButton = new JRadioButton("按学年查询");
-		yearButton.setBounds(100, 86, 101, 23);
+		yearButton.setBounds(100, 86, 103, 23);
 		yearButton.setOpaque(false);
 		yearButton.setSelected(true);
 		contentPane.add(yearButton);
 
 		termButton = new JRadioButton("按学期查询");
-		termButton.setBounds(220, 86, 101, 23);
+		termButton.setBounds(220, 86, 103, 23);
 		termButton.setOpaque(false);
 		contentPane.add(termButton);
 
 		subject = new JRadioButton("按指定课程查询");
-		subject.setBounds(323, 86, 121, 23);
+		subject.setBounds(323, 86, 123, 23);
 		subject.setOpaque(false);
 		contentPane.add(subject);
 

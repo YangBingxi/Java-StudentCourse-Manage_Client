@@ -128,7 +128,7 @@ public class Teac_FindPanel extends JPanel implements ActionListener, DocumentLi
 		add(nameField);
 
 		JLabel label_2 = new JLabel("指定分数");
-		label_2.setBounds(519, 29, 54, 15);
+		label_2.setBounds(519, 29, 60, 15);
 		add(label_2);
 
 		scoreField = new JTextField("0");
@@ -139,22 +139,22 @@ public class Teac_FindPanel extends JPanel implements ActionListener, DocumentLi
 
 		snoRadio = new JRadioButton("按学号查询");
 		snoRadio.setOpaque(false);
-		snoRadio.setBounds(98, 74, 99, 23);
+		snoRadio.setBounds(98, 74, 105, 23);
 		add(snoRadio);
 
 		nameRadio = new JRadioButton("按姓名查询");
 		nameRadio.setOpaque(false);
-		nameRadio.setBounds(222, 74, 99, 23);
+		nameRadio.setBounds(222, 74, 105, 23);
 		add(nameRadio);
 
 		higherRadio = new JRadioButton("高于(包含)指定分数");
 		higherRadio.setOpaque(false);
-		higherRadio.setBounds(334, 74, 160, 23);
+		higherRadio.setBounds(334, 74, 165, 23);
 		add(higherRadio);
 
 		lowerRadio = new JRadioButton("低于指定分数");
 		lowerRadio.setOpaque(false);
-		lowerRadio.setBounds(519, 74, 99, 23);
+		lowerRadio.setBounds(519, 74, 120, 23);
 		add(lowerRadio);
 
 		findMethodRadio.add(snoRadio);
@@ -173,15 +173,15 @@ public class Teac_FindPanel extends JPanel implements ActionListener, DocumentLi
 		scrollPane.setBounds(46, 179, 490, 180);
 		add(scrollPane);
 
-		termRadio = new JRadioButton("查询指定学期成绩");
-		termRadio.setBounds(98, 122, 121, 23);
+		termRadio = new JRadioButton("查询指定学期");
+		termRadio.setBounds(98, 122, 130, 23);
 		termRadio.setOpaque(false);
 		termRadio.setSelected(true);
 		add(termRadio);
 
-		yearRadio = new JRadioButton("查询指定学年成绩");
+		yearRadio = new JRadioButton("查询指定学年");
 		yearRadio.setOpaque(false);
-		yearRadio.setBounds(222, 122, 121, 23);
+		yearRadio.setBounds(222, 122, 130, 23);
 		add(yearRadio);
 
 		termRadio.addActionListener(this);
@@ -191,7 +191,7 @@ public class Teac_FindPanel extends JPanel implements ActionListener, DocumentLi
 		group.add(yearRadio);
 
 		JLabel label_3 = new JLabel("选择学期/学年");
-		label_3.setBounds(360, 126, 83, 15);
+		label_3.setBounds(360, 126, 100, 15);
 		add(label_3);
 
 		comboBox = new JComboBox<String>();
@@ -202,7 +202,7 @@ public class Teac_FindPanel extends JPanel implements ActionListener, DocumentLi
 		add(comboBox);
 
 		JLabel label_4 = new JLabel("指定课程");
-		label_4.setBounds(364, 29, 54, 15);
+		label_4.setBounds(364, 29, 60, 15);
 		add(label_4);
 
 		subjectField = new JTextField();
