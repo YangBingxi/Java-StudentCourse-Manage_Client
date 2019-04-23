@@ -20,4 +20,11 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/images/back.png</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/Images/back.png</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

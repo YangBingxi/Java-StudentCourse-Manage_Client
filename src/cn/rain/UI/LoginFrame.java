@@ -91,7 +91,7 @@ public class LoginFrame extends JFrame implements ActionListener {
 		login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/login.png")));
 		login.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 13));
 		login.setBackground(new Color(98, 183, 240));
-		login.setBounds(348, 304, 83, 30);
+		login.setBounds(365, 267, 83, 30);
 		login.addActionListener(this);
 		contentPane.add(login);
 
@@ -106,7 +106,7 @@ public class LoginFrame extends JFrame implements ActionListener {
 		passwordlab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/password.png")));
 		passwordlab.setFont(new Font("¿¬Ìå", Font.PLAIN, 15));
 		passwordlab.setHorizontalAlignment(SwingConstants.LEFT);
-		passwordlab.setBounds(128, 241, 83, 30);
+		passwordlab.setBounds(128, 220, 83, 30);
 		contentPane.add(passwordlab);
 
 		textField = new JTextField("SwYoung");
@@ -117,7 +117,7 @@ public class LoginFrame extends JFrame implements ActionListener {
 
 		passwordField = new JPasswordField("");
 		passwordField.setOpaque(false);
-		passwordField.setBounds(230, 243, 199, 27);
+		passwordField.setBounds(230, 220, 199, 27);
 		contentPane.add(passwordField);
 
 		JRadioButton stuRadio = new JRadioButton("Ñ§Éú");
@@ -125,14 +125,14 @@ public class LoginFrame extends JFrame implements ActionListener {
 		stuRadio.setOpaque(false);
 		stuRadio.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 12));
 		stuRadio.setSelected(true);
-		stuRadio.setBounds(149, 308, 49, 23);
+		stuRadio.setBounds(170, 270, 52, 23);
 		contentPane.add(stuRadio);
 
 		JRadioButton teacherRadio = new JRadioButton("½ÌÊ¦");
 		teacherRadio.setName("teacher");
 		teacherRadio.setOpaque(false);
 		teacherRadio.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 12));
-		teacherRadio.setBounds(205, 308, 49, 23);
+		teacherRadio.setBounds(220, 270, 52, 23);
 		contentPane.add(teacherRadio);
 
 		JLabel label = new JLabel("");
@@ -145,7 +145,7 @@ public class LoginFrame extends JFrame implements ActionListener {
 		adminRadio.setName("admin");
 		adminRadio.setOpaque(false);
 		adminRadio.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 12));
-		adminRadio.setBounds(261, 308, 72, 23);
+		adminRadio.setBounds(280, 270, 72, 23);
 		contentPane.add(adminRadio);
 
 		group.add(stuRadio);

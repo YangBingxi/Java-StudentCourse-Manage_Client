@@ -37,9 +37,9 @@ public class TestDAO {
 		map.put("schoolClass", "信息工程23班");
 
 		Teacher teacher = new Teacher();
-		teacher.setName("王诚");
-		teacher.setUsername("001");
-		teacher.setPassword("001");
+		teacher.setName("teacherWang");
+		teacher.setUsername("王老师");
+		teacher.setPassword("wang");
 		try {
 			dao.addUser(map);
 		} catch (UserExistedException e) {

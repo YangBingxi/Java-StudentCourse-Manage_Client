@@ -10,7 +10,7 @@ package cn.rain.Exceptions;
 
 public class UserExistedException extends Exception {
 
-	private static final long serialVersionUID = 2958039873765717022L;
+	private static final long serialVersionUID = 2958039873765717022L;// øÿ÷∆∞Ê±æºÊ»›
 
 	public UserExistedException() {
 		super();
